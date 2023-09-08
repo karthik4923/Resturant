@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your CSS and other head elements here -->
+    <style>
+        #cart-details{
+            font: 1em sans-serif;
+            font-size: 20px;
+        }
+        h1{
+            text-align: center;
+            font: 1em sans-serif;
+            font-size: 50px;
+        }
+        .item-image{
+            border-radius: 50px 50px;
+        }
+        .par{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart</h1>
+    <div id="cart-details">
+        <!-- Selected items will be displayed here -->
+        
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+            if (cartItems) {
+                const cartDetails = document.getElementById("cart-details");
+
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    total += item.price * item.quantity;
+                    const cartItemElement = document.createElement("div");
+                    cartItemElement.classList.add("cart-item");
+                    cartItemElement.innerHTML = `
+                    <div class="par">
+                        <p class="item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </p>
+                        <p class="item-info">
+                            <p>Item: ${item.name}</p>
+                            <p>
+                                Quantity: 
+                                <button class="decrement" data-name="${item.name}">-</button>
+                                ${item.quantity}
+                                <button class="increment" data-name="${item.name}">+</button>
+                            </p>
+                            <p>Price: $${item.price * item.quantity}</p>
+                        </p>
+                    <div>
+                    `;
+                    cartDetails.appendChild(cartItemElement);
+                });
+
+                const totalElement = document.createElement("p");
+                totalElement.textContent = `Total: $${total}`;
+                cartDetails.appendChild(totalElement);
+
+                const decrementButtons = document.querySelectorAll(".decrement");
+                const incrementButtons = document.querySelectorAll(".increment");
+
+                decrementButtons.forEach(button => {
+                    button.addEventListener("click", function() {
+                        const itemName = this.getAttribute("data-name");
+                        const itemIndex = cartItems.findIndex(item => item.name === itemName);
+                        if (itemIndex !== -1) {
+                            if (cartItems[itemIndex].quantity > 1) {
+                                cartItems[itemIndex].quantity--;
+                            } else {
+                                cartItems.splice(itemIndex, 1);
+                            }
+                            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+                            location.reload(); // Reload the page to update the displayed quantities
+                        }
+                    });
+                });
+
+                incrementButtons.forEach(button => {
+                    button.addEventListener("click", function() {
+                        const itemName = this.getAttribute("data-name");
+                        const itemIndex = cartItems.findIndex(item => item.name === itemName);
+                        if (itemIndex !== -1) {
+                            cartItems[itemIndex].quantity++;
+                            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+                            location.reload(); // Reload the page to update the displayed quantities
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

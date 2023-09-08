@@ -1,0 +1,267 @@
+body{
+    box-sizing: border-box;
+    margin:0px;
+    background-color:rgb(225, 233, 225);
+   
+}
+h1{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+#home{
+    display:inline-block;
+    background-color:rgb(225, 233, 225);
+}
+#about_us{
+    display:inline-block;
+    background-color:rgb(225, 233, 225);
+}
+#support{
+    display:inline-block;
+    background-color:rgb(225, 233, 225);
+}
+#information{
+    display:inline-block;
+    background-color:rgb(225, 233, 225);
+}
+#comment{
+    display:inline-block;
+    background-color:rgb(225, 233, 225);
+}
+p{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.items{
+    display: inline-block;
+    margin:20px;
+    box-shadow:2px 2px 5px rgb(0, 0, 0);;
+    padding:10px;
+    border-radius:10px;
+
+}
+.items:hover{
+    border:1px solid rgb(245, 115, 115);
+}
+.items p1{
+    display:block;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.items button{
+    text-align:center;
+    color:black;
+    border:none;
+    border-radius:5px;
+    padding:5px;
+    background-color: rgb(92, 222, 92);
+    cursor: pointer;
+
+}
+.food{
+    height: 100px;
+    width:100px;
+    border-radius: 10px;
+    float:left;
+}
+.items button:hover{
+    background-color: rgb(49, 237, 42);
+    color:white;
+}
+form{
+    margin:20px;
+    border:2px solid;
+    border-radius:10px;
+    padding:10px;
+    display: block;
+}
+form{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding:10px;
+
+}
+.container{
+    margin-left: 15%;
+    height:500px;
+    width:75%;
+    background-image:url(birayani.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation-name: myani;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 5px;
+    border:1px solid gray;
+}
+@keyframes myani {
+    0%{background-image:url(burger.jpeg);}
+    35%{background-image:url(panner.jpeg);}
+    55%{background-image:url(passta.jpeg);}
+    75%{background-image:url(pizza.jpeg);}
+    85%{background-image:url(ramen.jpeg);}
+    95%{background-image:url(chicken.jpeg);}
+    
+}
+footer{
+    
+    float:left;
+}
+#username{
+    border-radius:10px;
+    border:2px solid gainsboro;
+    width:100%;
+
+}
+#email{
+    border-radius:10px;
+    border:2px solid gainsboro;
+    width:100%;
+
+}
+#phone{
+    border-radius:10px;
+    border:2px solid gainsboro;width:100%;
+
+}
+#comment{
+    border-radius:10px;
+    border:2px solid gainsboro;
+    width:100%;
+
+}
+.b1:hover{
+    background-color: wheat;
+
+}
+.video1{
+    padding:10px;
+    margin:20px;
+    float:left;
+}
+.video2{
+    padding:10px;
+    margin:20px;
+    float:right;
+}
+.para{
+    font-family: 'Times New Roman', Times, serif;
+   
+    text-align: justify;
+}
+.para1{
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+
+}
+h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(35, 236, 0);
+}
+.icon{
+    float:right;
+    margin-right: 35%;
+    display: block;
+    padding:10px;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  #comment .com{
+    display:inline-block;
+  }
+  #comment .com .comm{
+    border:2px solid rgb(102, 239, 102);
+    float:left;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    padding:10px;
+  }
+  #comment .com .comm h5{
+    font-family: 'Times New Roman', Times, serif;
+    font: size 10px;
+  }
+  .main{
+    background-color: rgb(77, 200, 77);
+    justify-content: space-between;
+    display:flex;
+    height:50px;
+    
+  }
+  .navbar a{
+    text-decoration: none;
+    display:inline-block;
+    color:white;
+    padding:10px;
+    text-align: center;
+    height:100%;
+  }
+  .navbar a:hover{
+    background-color: greenyellow;
+    
+  }
+  .right{
+    display: inline-flex;
+    padding:10px;
+    margin-right:10px;
+  }
+  .cartbox{
+    background-color: rgb(205, 185, 73);
+    border-radius: 5px;
+  }
+  .ix{
+    margin-top: 10px;
+    transform: translateY(-70%);
+  }
+
+
+
+  
